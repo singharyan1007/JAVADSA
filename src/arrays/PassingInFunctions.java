@@ -11,6 +11,6 @@ public class PassingInFunctions {
         System.out.println(Arrays.toString(num));
     }
     static void change(int[] arr ){
-        arr[0]=99;
+        arr[0]=100;
     }
 }
