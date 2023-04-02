@@ -5,7 +5,7 @@
 <ol>
 
 <li>
-We recursion is the process in which a function calls itself.
+Recursion is the process in which a function calls itself.
 
 </li>
 <li>We need a base condition to terminate the function call</li>
@@ -16,5 +16,5 @@ We recursion is the process in which a function calls itself.
 
 </li>
 
+
 </ol>
-We need a base consition
