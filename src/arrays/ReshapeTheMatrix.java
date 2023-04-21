@@ -8,7 +8,7 @@ public class ReshapeTheMatrix {
                 {1,2},
                 {3,4}
         };
-        System.out.println(matrixReshape(arr,1,4));
+        System.out.println(Arrays.toString(matrixReshape(arr,1,4)));
 
     }
     static int[][] matrixReshape(int[][] mat, int r, int c) {
