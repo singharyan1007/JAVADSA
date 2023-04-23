@@ -2,7 +2,7 @@ package Recursion;
 
 public class fibonacciFormula {
     public static void main(String[] args) {
-        System.out.println(fiboformula(3));
+        System.out.println(fiboformula(656));
 
     }
     static int fiboformula(int n){
