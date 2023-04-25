@@ -4,15 +4,13 @@ import java.util.Arrays;
 
 public class RearrangeArrayElementsbySign {
     public static void main(String[] args) {
-        int[] nums={-5, -2, 5, 2, 4, 7, 1, 8, 0, -8};
-//        rearrange(nums);
+        int[] nums={-5 ,-2, 5, 2, 4, 7, 1, 8, 0, -8};
+
         rearrange1(nums);
     }
-//    static void rearrange(int[] nums){
-//
-//
-//    }
+
     static void rearrange1(int[] nums){
+        //This particular method only works , when there are equal no of positive and negative integers
         int pos=0;
         int neg=1;
         int[] ans=new int[nums.length];
