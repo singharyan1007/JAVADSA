@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-public class insertionsort {
+public class  insertionsort {
     public static void main(String[] args) {
         int[] arr={4,5,3,1,2};
         insertion(arr);
