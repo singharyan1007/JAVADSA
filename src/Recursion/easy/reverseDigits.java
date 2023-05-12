@@ -3,16 +3,19 @@ package Recursion.easy;
 public class reverseDigits {
 
     static int sum=0;
-    static void sumrev(int n){
+    static int sumrev(int n){
         if(n==0)
-            return;
+            return 0;
 
         int rem=n%10;
         sum=sum*10+rem;
-        sumrev(n/10);
+       return sumrev(n/10);
     }
     public static void main(String[] args) {
-        sumrev(1423);
+        int a=sumrev(1423);
+        if(a==1423){
+            System.out.println(1);
+        }
         System.out.println(sum);
     }
 }
