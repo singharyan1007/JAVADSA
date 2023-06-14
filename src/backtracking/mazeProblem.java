@@ -8,12 +8,12 @@ public class mazeProblem {
 //        path("",3,3);
 //        System.out.println(pathRet("",3,3));
 //        System.out.println(pathDig("",3,3));
-        boolean[][] board={
-                {true,true,true},
-                {true,false,true},
-                {true,true,true}
-        };
-        pathRestrictions("",board,0,0);
+//        boolean[][] board={
+//                {true,true,true},
+//                {true,false,true},
+//                {true,true,true}
+//        };
+//        pathRestrictions("",board,0,0);
     }
     static int count(int r, int c){
         if(r==1 || c==1){
