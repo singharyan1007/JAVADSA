@@ -1,12 +1,9 @@
-### Notes
-
-----
+# Notes
+____
 
 <ol>
-
 <li>
 Recursion is the process in which a function calls itself.
-
 </li>
 <li>We need a base condition to terminate the function call</li>
 <li>Each function call takes a space in the stack memory and the function leaves the stack memory after it has completed its task.</li>
@@ -15,6 +12,4 @@ Recursion is the process in which a function calls itself.
 ` Stack overflow error ` 
 
 </li>
-
-
 </ol>
