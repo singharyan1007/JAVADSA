@@ -7,8 +7,24 @@ public class kanpsack01 {
         int w=50;
         System.out.println(knap(wt,val,3,50));
         System.out.println(knapDp(wt,val,3,w));
+        System.out.println(knaprecur(wt,val,3,w));
 
     }
+
+//    Recursive approach
+    static int knaprecur(int[] wt, int[] val,int n,int w){
+        if(n==0||w==0){
+            return 0;
+        }
+        if(wt[n-1]<=w){
+            return Math.max(val[n-1]+knaprecur(wt,val,n-1,w-wt[n-1]),knaprecur(wt,val,n-1,w));
+        }else{
+            return knaprecur(wt,val,n-1,w);
+        }
+
+    }
+
+
 
     static int[][] t=new int[4][51];
     static int knap(int[] wt, int[] val,int n, int w){
