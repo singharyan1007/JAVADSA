@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class minsubsetdiff {
     public static void main(String[] args) {
-        int[] arr={1,2,7};
-        int sum=10;
+        int[] arr={1,1,2,3,7,10};
+        int sum=24;
         System.out.println(subset(arr,sum,arr.length));
 
     }
@@ -47,7 +47,7 @@ public class minsubsetdiff {
        }
        int min=Integer.MAX_VALUE;
        for(int j=0;j<alist.size()/2;j++){
-           min=Math.min(min,sum-2*j);
+           min=Math.min(min,sum-2*alist.get(j));
        }
        return min;
     }
