@@ -75,6 +75,53 @@ public class LeetcodeLL {
         return ans;
     }
 
+    // Merge Lists
+
+//     static LeetcodeLL mergeTwoLists(LeetcodeLL list1, LeetcodeLL list2) {
+//        LeetcodeLL dummyHead=new LeetcodeLL();
+//        LeetcodeLL node=dummyHead;
+//        while(list1!=null && list2!=null){
+//            if(list1.value<list2.value){
+//                node.next=list1;
+//                list1=list1.next;
+//
+//
+//            }else{
+//                node.next=list2;
+//                list2=list2.next;
+//
+//
+//            }
+//            node=node.next;
+//        }
+//        node.next=list1==null?list2:list1;
+//
+//        return dummyHead.next;
+//
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //3.  https://leetcode.com/problems/reverse-linked-list/
     //reversing a singly linkedlist in-place
@@ -108,6 +155,71 @@ public class LeetcodeLL {
 
 
     //4. https://leetcode.com/problems/linked-list-cycle/
+    //Concept of fast and slow pointer
+    //fast -> jumps two nodes ata time. So if loop is present then
+    //slow and fast pointer will surely meet
+
+    public boolean hasCycle(Node head) {
+        Node fast=head;
+        Node slow=head;
+
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    static int cycleLength(Node head){
+        //Count the length of the cycle
+        Node fast=head;
+        Node slow=head;
+        int count=0;
+
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+
+            if(fast==slow){
+                //calculate the length
+                Node temp=slow;
+                //wont work if using while so use do...while
+                do{
+                    temp=temp.next;
+                    count++;
+                }while(temp!=slow);
+                return count;
+            }
+        }
+        return 0;
+    }
+
+        //5. Google: https://leetcode.com/problems/happy-number
+    public boolean isHappy(int n){
+        int slow=n;
+        int fast=n;
+        do{
+            slow=findSqaure(slow);
+            fast=findSqaure(findSqaure(fast));
+        }while(slow!=fast);
+        if(slow==1){
+            return true;
+        }
+        return false;
+
+    }
+    private int findSqaure(int num){
+        int ans=0;
+        while(num>0){
+            int rem=num%10;
+            ans+=rem*rem;
+            num/=10;
+        }
+        return ans;
+    }
 
 
 
