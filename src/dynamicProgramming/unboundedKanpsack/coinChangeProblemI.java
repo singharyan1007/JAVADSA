@@ -9,8 +9,9 @@ public class coinChangeProblemI {
 //        Example:
 //        for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}. So output should be 4.
 
-        int[] coins={1,2,3};
-        int sum=4;
+        int[] coins={1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+        int sum=1000;
         int n=coins.length;
         System.out.println(countWays(coins,sum,n));
     }

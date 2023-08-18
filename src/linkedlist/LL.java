@@ -50,8 +50,38 @@ public class LL {
         Node node=new Node(val,temp.next);
         temp.next=node;
         size++;
-
     }
+
+    // Inserting a new node using recursion
+
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
+    }
+    private Node insertRec(int val, int index, Node currentNode) {
+        if (index == 0) {
+            Node temp = new Node(val, currentNode);
+            size++;
+            return temp;
+        }
+
+        currentNode.next = insertRec(val, index-1, currentNode.next);
+        return currentNode;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Deleting a node(first)
     //To do so we move the positions of the head
     //If only single element then  put head and tail both as null
@@ -153,6 +183,12 @@ public class LL {
         }
         System.out.println("END");
     }
+
+
+
+
+
+
 
 
 
