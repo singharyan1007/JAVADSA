@@ -126,6 +126,25 @@ public class LeetcodeLL {
     //3.  https://leetcode.com/problems/reverse-linked-list/
     //reversing a singly linkedlist in-place
 
+    public void reverse(){
+        if(size<2){
+            return;
+        }
+        Node prev=null;
+        Node present=head;
+        Node second=present.next;
+
+        while(present!=null){
+            present.next=prev;
+            prev=present;
+            present=second;
+            while(second.next!=null){
+                second=second.next;
+            }
+        }
+        head=prev;
+    }
+
 
 
 
@@ -222,6 +241,59 @@ public class LeetcodeLL {
     }
 
 
+    //Bubble sort on linkedLists using the pattern approach
+    public Node get(int index){
+        Node node=head;
+        for(int i=0;i<index;i++){
+            node=node.next;
+        }
+        return node;
+    }
+
+    public void bubbleSort(){
+        bubbleSort(size-1,0);
+    }
+    private void bubbleSort(int row, int col){
+        if(row==0){
+            return;
+        }
+        if(col<row){
+            Node first=get(col);
+            Node second=get(col+1);
+
+            if(first.value>second.value){
+                //swap
+                //Now there are three cases
+                //1. First at HEAD
+                if(first==head){
+                    head=second;
+                    first.next=second.next;
+                    second.next=first;
+                }else if(second==null){
+                    //2. Second is at tail
+                    Node prev=get(col-1);
+                    prev.next=second;
+                    tail=first;
+                    first.next=null;
+                    second.next=null;
+
+                }else{
+                    //3. The first and second are in the mid
+                    Node prev=get(col-1);
+                    prev.next=second;
+                    first.next=second.next;
+                    second.next=first;
+
+                }
+                bubbleSort(row,col+1 );
+            }else{
+                bubbleSort(row-1,0);
+            }
+
+        }
+    }
+
+
 
 
 
@@ -258,4 +330,6 @@ public class LeetcodeLL {
             this.next=next;
         }
     }
+
+
 }
