@@ -102,6 +102,30 @@ public class LeetcodeLL {
 
 
 
+    //3. Detecting the startint node of the Cycle
+    // KUNAL!=SOLUTION
+    public Node detectCycle(Node head) {
+        Node fast=head;
+        Node slow=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+
+            if(fast==slow){
+                fast=head;
+                while(slow!=fast){
+                    fast=fast.next;
+                    slow=slow.next;
+                }
+                if(fast==slow){
+                    return slow;
+                }
+            }
+        }
+        return null;
+    }
+
+    //KUNAL==SOLUTION
 
 
 
@@ -123,10 +147,14 @@ public class LeetcodeLL {
 
 
 
-    //3.  https://leetcode.com/problems/reverse-linked-list/
+
+
+
+
+    //4.  https://leetcode.com/problems/reverse-linked-list/
     //reversing a singly linkedlist in-place
 
-    public void reverse(){
+    public void  reverse(){
         if(size<2){
             return;
         }
@@ -145,6 +173,111 @@ public class LeetcodeLL {
         head=prev;
     }
 
+    // Reversing a LinkdeList using Recursion
+    public static Node RecurReverse(Node head){
+        if(head==null || head.next==null){
+            return head;
+        }
+        Node newHead=RecurReverse(head.next);
+        //This will basically go to the last element
+        // Node when we will come out of the function call
+        // then we will be reversing the list
+        head.next.next=head;
+        //then we will break the link
+        head.next=null;
+
+        return newHead;
+    }
+
+
+    //5. https://leetcode.com/problems/reverse-linked-list-ii/
+
+    public Node reverseBetween(Node head,int left, int right){
+        if(left==right){
+            return head;
+        }
+        Node prev=null;
+        Node current=head;
+        for(int i=0;current!=null && i<left-1;i++){
+            prev=current;
+            current=current.next;
+        }
+
+        Node last=prev;
+        Node newEnd=current;
+
+
+        //Now perform reversal between the left and right
+        Node next=current.next;
+        for(int i=0;current!=null && i<right-left+1;i++){
+            current.next=prev;
+            prev=current;
+            current=next;
+            if(next!=null){
+                next=next.next;
+            }
+        }
+        if(last!=null){
+            last.next=prev;
+        }else{
+            head=prev;
+        }
+        newEnd.next=current;
+        return head;
+
+    }
+
+
+    //6. PALINDROMIC LIST https://leetcode.com/problems/palindrome-linked-list/
+
+//    public boolean isPalindrome(ListNode head) {
+//        ListNode mid = middleNode(head);
+//        ListNode headSecond = reverseList(mid);
+//        ListNode rereverseHead = headSecond;
+//
+//        // compare both the halves
+//        while (head != null && headSecond != null) {
+//            if (head.val != headSecond.val) {
+//                break;
+//            }
+//            head = head.next;
+//            headSecond = headSecond.next;
+//        }
+//        reverseList(rereverseHead);
+//
+//        return head == null || headSecond == null;
+//
+//    }
+//
+//    static  ListNode middleNode(ListNode head) {
+//        ListNode s = head;
+//        ListNode f = head;
+//
+//        while (f != null && f.next != null) {
+//            s = s.next;
+//            f = f.next.next;
+//        }
+//        return s;
+//    }
+//    static ListNode reverseList(ListNode head) {
+//        if (head == null) {
+//            return head;
+//        }
+//        ListNode prev = null;
+//        ListNode present = head;
+//        ListNode next = present.next;
+//
+//        while (present != null) {
+//            present.next = prev;
+//            prev = present;
+//            present = next;
+//            if (next != null) {
+//                next = next.next;
+//            }
+//        }
+//        return prev;
+//    }
+//
 
 
 
@@ -173,7 +306,9 @@ public class LeetcodeLL {
 
 
 
-    //4. https://leetcode.com/problems/linked-list-cycle/
+
+
+    //6. https://leetcode.com/problems/linked-list-cycle/
     //Concept of fast and slow pointer
     //fast -> jumps two nodes ata time. So if loop is present then
     //slow and fast pointer will surely meet
@@ -216,7 +351,7 @@ public class LeetcodeLL {
         return 0;
     }
 
-        //5. Google: https://leetcode.com/problems/happy-number
+        //7. Google: https://leetcode.com/problems/happy-number
     public boolean isHappy(int n){
         int slow=n;
         int fast=n;
@@ -230,6 +365,7 @@ public class LeetcodeLL {
         return false;
 
     }
+
     private int findSqaure(int num){
         int ans=0;
         while(num>0){
@@ -240,6 +376,20 @@ public class LeetcodeLL {
         return ans;
     }
 
+
+
+
+    // 8. https://leetcode.com/problems/middle-of-the-linked-list/
+    public static Node middleNode(Node head) {
+        Node s = head;
+        Node f = head;
+
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
 
     //Bubble sort on linkedLists using the pattern approach
     public Node get(int index){
