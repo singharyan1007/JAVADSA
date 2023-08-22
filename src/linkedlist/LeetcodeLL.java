@@ -283,6 +283,71 @@ public class LeetcodeLL {
 
 
 
+// 7.REORDER LIST https://leetcode.com/problems/reorder-list/
+
+    static void reorderList(Node head){
+        if(head==null || head.next==null){
+            return;
+        }
+
+        //Divide the lists into two halves
+        Node mid=mid(head);
+        Node fh=head;
+        Node sh=revList(mid);
+        while(fh!=null && sh!=null){
+            Node temp=fh.next;
+            fh.next=sh;
+            fh=temp;
+
+            //second half
+            temp=sh.next;
+            sh.next=fh;
+            sh=temp;
+        }
+
+        if(fh!=null){
+            fh.next=null;
+        }
+
+    }
+
+
+    static Node mid(Node head){
+        Node fast=head;
+        Node slow=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+
+    static Node revList(Node head){
+        if(head==null) {
+            return head;
+        }
+            Node prev=null;
+            Node current=head;
+            Node next=current.next;
+            while(current!=null){
+                current.next=prev;
+                prev=current;
+                current=next;
+
+                if(next!=null){
+                    next=next.next;
+                }
+
+            }
+            return prev;
+
+    }
+
+
+
+
+
+
 
 
 
