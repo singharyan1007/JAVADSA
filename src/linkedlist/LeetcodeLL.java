@@ -344,6 +344,57 @@ public class LeetcodeLL {
     }
 
 
+    // 8. ROTATE LIST https://leetcode.com/problems/rotate-list/
+
+     static Node rotate(Node head, int k){
+        if(k<=0||head==null||head.next==null){
+            return head;
+        }
+
+        Node last=head;
+        int length=1;
+        while(last.next!=null){
+            last=last.next;
+            length++;
+        }
+
+        last.next=head;
+        //now get new last
+         int rotations=k%length;
+         int skip=length-rotations;
+         Node newLast=head;
+
+         for(int i=0;i<skip;i++){
+             newLast=newLast.next;
+         }
+         head=newLast.next;
+         newLast.next=null;
+
+         return head;
+
+     }
+
+     // Rotate left https://practice.geeksforgeeks.org/problems/rotate-a-linked-list/1
+     static Node rotateLeft(Node head, int k) {
+         // add code here
+         Node p=head;
+         while(p.next!=null){
+             p=p.next;
+         }
+         int ans=0;
+         while(ans<k){
+             Node temp=head;
+             head=head.next;
+             p.next=temp;
+             p=temp;
+             p.next=null;
+             ans++;
+         }
+         return head;
+     }
+
+
+
 
 
 
