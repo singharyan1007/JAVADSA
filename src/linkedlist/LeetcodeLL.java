@@ -584,6 +584,10 @@ public class LeetcodeLL {
 
 
 
+
+
+
+
     private class Node{
         private int value;
         private LeetcodeLL.Node next;
