@@ -18,9 +18,19 @@ public class basicsOops {
 //        aryan.name="Aryan";
 //        aryan.marks=88.0f;
         Student aryan=new Student();
+//        Student vanshika=new Student(56,"Vanshika",99.0f);
+//        System.out.println(vanshika.name);
+//        System.out.println(vanshika.rno);
+//        System.out.println(vanshika.marks);
 
 
         System.out.println(aryan.name);
+        aryan.greeting();
+
+        // SO NOW IF WE CREATE A random class
+        Student random=new Student(aryan);
+        //The OTHER will be replaced by aryan and this will be replaced by
+        //random
 
 
 
@@ -29,14 +39,41 @@ public class basicsOops {
         int rno;
         String name;
         float marks;
+        void greeting() {
+//            System.out.println("Hello my name is "+this.name); works
+            //the same as
+            System.out.println("Hello my name is "+name);
+        }
 
+        //CASE when we take values from other class
+        Student(Student other){
+            this.name=other.name;
+            this.marks=other.marks;
+            this.rno=other.rno;
+        }
 
         Student(){
-            this.rno=27;
-            this.name="Aryan";
-            this.marks=100.0f;
-
+            //calling another constructor from another
+            this(27,"Aryan",100.0f);
         }
+
+
+//        Student(){
+//            this.rno=27;
+//            this.name="Aryan";
+//            this.marks=100.0f;
+//
+//        }
+        Student(int roll, String name,float marks){
+            this.rno=roll;
+            this.name=name;
+            this.marks=marks;
+        }
+
+
+
+        //This is called as constructor overloading.
+        //Same name, but different implementation
 
 
     }
