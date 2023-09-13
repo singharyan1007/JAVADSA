@@ -8,9 +8,10 @@ public class subseq1 {
 //        sub("","abc");
 //        Collections.sort(alist);
 //        System.out.println(alist);
-        ArrayList<String> ist=subRet("","abc");
+        ArrayList<String> ist=subRet("","123");
         Collections.sort(ist);
         System.out.println(ist);
+
 
     }
     static void subs(String p, String up){
