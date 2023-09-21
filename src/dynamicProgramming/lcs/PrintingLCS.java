@@ -3,8 +3,8 @@ package dynamicProgramming.lcs;
 public class PrintingLCS {
     public static void main(String[] args) {
 
-        String s1= "abcde";
-        String s2= "bdgek";
+        String s1= "intention";
+        String s2= "execution";
 
         System.out.print("The Longest Common Subsequence is ");
         lcs(s1,s2);
