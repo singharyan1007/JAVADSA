@@ -2,12 +2,12 @@ package dynamicProgramming.lcs;
 
 public class lcsBasics {
     public static void main(String[] args) {
-        String s1="abcdgh";
+        String s1="books";
         int x=s1.length();
-        String s2="abedfhr";
+        String s2="aapple";
         int y=s2.length();
 
-//        System.out.println(longestCommonSubsequence(s1,s2));
+        System.out.println(longestCommonSubsequence(s1,s2));
 
     }
     //recursive solution- gives TLE
@@ -61,7 +61,7 @@ public class lcsBasics {
 
 
 //     TOP DOWN APPROACH
-public int longestCommonSubsequence(String text1, String text2) {
+public static int longestCommonSubsequence(String text1, String text2) {
     for(int i=0;i<t.length;i++){
         for(int j=0;j<t[0].length;j++){
             t[i][j]=-1;
