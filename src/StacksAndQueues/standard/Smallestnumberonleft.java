@@ -8,10 +8,12 @@ public class Smallestnumberonleft {
     //Nearest smallest number on left
 
 
+
     // https://practice.geeksforgeeks.org/problems/smallest-number-on-left3403/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
     public static void main(String[] args) {
 
-
+        int[] arr={1,3,2,4};
+        System.out.println(leftSmaller(4,arr));
     }
     static List<Integer> leftSmaller(int n, int a[])
     {

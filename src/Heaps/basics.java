@@ -43,6 +43,10 @@ public class basics<T extends Comparable<T>> {
         }
     }
 
+    public void print(){
+        System.out.println(list);
+    }
+
     public T remove() throws Exception {
         if (list.isEmpty()) {
             throw new Exception("Removing from an empty heap!");

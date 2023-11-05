@@ -10,7 +10,7 @@ public class Main  {
         heap.insert(22);
         heap.insert(89);
         heap.insert(76);
-//        heap.print();
+        heap.print();
 
         ArrayList list = heap.heapSort();
         System.out.println(list);

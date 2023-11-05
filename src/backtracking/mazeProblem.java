@@ -6,14 +6,14 @@ public class mazeProblem {
     public static void main(String[] args) {
         System.out.println(count(3,3));
 //        path("",3,3);
-//        System.out.println(pathRet("",3,3));
+        System.out.println(pathRet("",3,3));
 //        System.out.println(pathDig("",3,3));
-        boolean[][] board={
-                {true,false,true},
-                {true,false,false},
-                {true,true,true}
-        };
-        pathRestrictions("",board,0,0);
+//        boolean[][] board={
+//                {true,false,true},
+//                {true,false,false},
+//                {true,true,true}
+//        };
+//        pathRestrictions("",board,0,0);
     }
     static int count(int r, int c){
         if(r==1 || c==1){
@@ -24,7 +24,8 @@ public class mazeProblem {
         return left+right;
     }
     // printing the path using the same concept of processed and
-    //taking && in base condition to print the path because both the values needs to be 1 to give the actual path
+    //taking && in base condition to print the path because both the values needs to be
+    // 1 to give the actual path
     static void path(String p, int r, int c){
         if(r==1 && c==1){
             System.out.println(p);
