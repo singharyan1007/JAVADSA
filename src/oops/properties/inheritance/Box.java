@@ -12,6 +12,7 @@ public class Box {
 
 
     Box(){
+//        super();
         this.h=-1;
         this.l=-1;
         this.w=-1;

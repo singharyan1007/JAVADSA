@@ -1,6 +1,6 @@
 package oops.properties.polymorphism;
 
-public class Main {
+public class Main extends Object {
     public static void main(String[] args) {
         Shapes shape=new Shapes();
         Circle c=new Circle();

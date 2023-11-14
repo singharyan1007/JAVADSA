@@ -32,6 +32,12 @@ public class basicsOops {
         //The OTHER will be replaced by aryan and this will be replaced by
         //random
 
+        //NEW keyword memory allocation
+        Student vanshika=aryan;
+        aryan.name="mine";
+        System.out.println(vanshika.name);
+        vanshika.greeting();
+
 
 
     }
@@ -75,7 +81,8 @@ public class basicsOops {
         //This is called as constructor overloading.
         //Same name, but different implementation
 
-
+        // Why we don't declare primitives with new keyword?
+        // Primitives are not objects. The are present in the stack memory.
     }
 
 }

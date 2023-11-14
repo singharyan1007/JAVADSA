@@ -61,6 +61,7 @@ public class wrapperExample {
         //same object
         //cannot be reassigned
         //but its values can be changed
+        //must always be initialised
     }
 
 
