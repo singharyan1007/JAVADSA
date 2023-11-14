@@ -8,9 +8,9 @@ public class BoxWeight extends Box{
 
     }
 //    @Override
-    public static void greeting(){
-        System.out.println("Hey I am BoxWeight class");
-    }
+//    public static void greeting(){
+//        System.out.println("Hey I am BoxWeight class");
+//    }
 
     BoxWeight(BoxWeight other){
         super(other);

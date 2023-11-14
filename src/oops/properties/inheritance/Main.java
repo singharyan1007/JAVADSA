@@ -25,6 +25,10 @@ public class Main {
       //  BoxWeight wt=new Box(2,3,4);  throws an error. Refer notes
 
 
+        Box b=new BoxWeight();
+        b.greeting();
+
+
 
     }
 }

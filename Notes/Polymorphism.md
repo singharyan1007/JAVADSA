@@ -31,3 +31,9 @@ If they differ in any of these aspects, it results in method overloading, not me
 | Actual object not used for binding       | Actual object used for binding       |
 | For example: Method overloading          | For example: Method overriding       |
 | Program execution is faster              | Program execution is slower          |
+
+### Can static methods be overridden ?
+
+No, static methods cannot be overridden. Overriding depends on the objects type.
+While static methods are independent of objects.
+ > Static methods can be inherited, but can't be over-ridden.
