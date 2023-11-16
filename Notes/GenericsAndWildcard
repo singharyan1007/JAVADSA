@@ -1,0 +1,12 @@
+# Difference between T extends Number & ? extends Number
+
+###  T extends Number
+1. T represents a type parameter that extends the Number class. It's used in generic class or method declarations to indicate that the type T should be a subclass of Number.
+2. When you declare a class or method with T extends Number, it means that the type T can be any specific class that is a subclass of Number. For instance, Integer, Double, Float, etc., can be used as T.
+3. It allows for more specific type handling and operations because within the class or method, you can use methods and properties of the Number class on objects of type T.
+
+
+### ? extends Number:
+
+1. This is a wildcard type that represents an unknown subtype of Number. It's used mainly when you want to work with a collection or method that deals with an unknown type that extends Number.
+2. The ? extends Number wildcard is more flexible than using a specific type parameter (T). It allows you to work with any subclass of Number without specifying which one.
